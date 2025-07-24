@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+    <html lang="tr">
+    <head>
+    <meta charset="UTF-8">
+    <style>
+        table {
+          font-family: 'Roboto', sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: purple;
+            color: white;
+        }
+        .green {
+            color: green;
+        }
+        .red {
+            color: red;
+        }
+        .gr{
+            background-color: rgb(205, 205, 205);
+        }
+    </style>
+</head>
+<body>
+
+    <table id="coinTable">
+    <thead>
+        <tr>
+          <th>Adı</th>
+          <th>Kodu</th>
+          <th>Fiyat</th>
+          <th>24 Saatlik Değişim</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="gr"><td >Bitcoin</td><td>BTC</td><td>9685</td><td>2,83%</td></tr>
+        <tr><td>Ethereum</td><td>ETH</td><td>210,5</td><td>6,17%</td></tr>
+        <tr class="gr"><td>Ripple</td><td>XRP</td><td>0,2812</td><td>-2,47%</td></tr>
+        <tr><td>Bitcoin Cash</td><td>BCH</td><td>441,4</td><td>5,01%</td></tr>
+        <tr class="gr"><td>Bitcoin SV</td><td>BSV</td><td>303,17</td><td>5,53%</td></tr>
+        <tr><td>Litecoin</td><td>LTC</td><td>74,935</td><td>4,25%</td></tr>
+        <tr class="gr"><td>Tether</td><td>USDT</td><td>0,9994</td><td>-0,01%</td></tr>
+        <tr><td>EOS</td><td>EOS</td><td>4,6161</td><td>3,15%</td></tr>
+        <tr class="gr"><td>Binance Coin</td><td>BNB</td><td>19,824</td><td>3,82%</td></tr>
+        <tr><td>Cardano</td><td>ADA</td><td>0,060389</td><td>2,93%</td></tr>
+        <tr class="gr"><td>Tezos</td><td>XTZ</td><td>2,1247</td><td>-6,12%</td></tr>
+        <tr><td>Ethereum Classic</td><td>ETC</td><td>12,5988</td><td>4,09%</td></tr>
+        <tr class="gr"><td>Stellar</td><td>XLM</td><td>0,07034</td><td>4,10%</td></tr>
+        <tr><td>Monero</td><td>XMR</td><td>79,523</td><td>3,45%</td></tr>
+        <tr class="gr"><td>TRON</td><td>TRX</td><td>0,020881</td><td>5,21%</td></tr>
+    </tbody>
+    </table>
+
+    <script>
+        const rows = document.querySelectorAll("#coinTable tbody tr");
+        rows.forEach(row => {
+            const changeCell = row.cells[3];
+            const value = changeCell.textContent.trim();
+            if (value.startsWith("-")) {
+              changeCell.classList.add("red");
+            } else {
+              changeCell.classList.add("green");
+            }
+        });
+
+        let gr = document.querySelector(".gr");
+        gr.append(gr);
+
+        gr.style.backgroundColor = "gray"
+    </script>
+
+</body>
+</html>
